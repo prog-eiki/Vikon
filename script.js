@@ -1,0 +1,3 @@
+const enter=document.getElementById("enter"),enterButton=document.getElementById("enterButton"),music=document.getElementById("music"),sound=document.getElementById("sound"),bg=document.getElementById("bg");let on=false;
+enterButton.addEventListener("click",async()=>{enter.classList.add("hidden");try{await music.play();on=true}catch(e){}bg.play().catch(()=>{});sound.textContent=on?"♪":"×"});
+sound.addEventListener("click",async()=>{if(music.paused){try{await music.play();on=true}catch(e){}}else{music.pause();on=false}sound.textContent=on?"♪":"×"});
